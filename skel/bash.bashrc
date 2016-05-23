@@ -1,7 +1,7 @@
 # /etc/bash.bashrc
 #
 # by Alexiobash
-# https://alexiobash.com
+# http://alexiobash.com
 # me (at) alexiobash (dot) com
 
 # If not running interactively, don't do anything
