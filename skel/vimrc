@@ -1,0 +1,24 @@
+" By AlexioBash
+" " https://alexiobash.com
+" " me@alexiobash.com
+
+filetype off 
+set nocompatible  
+set history=100
+set encoding=utf-8
+set showcmd
+
+syntax on 
+set t_Co=256 
+set background=dark
+highlight Pmenu guibg=brown gui=bold
+
+let g:session_autoload = 'no'
+let g:session_autosave = 'no'
+set backupdir^=~/.vim/backup// 
+set directory^=~/.vim/tmp//
+
+" Reformat XML file
+au FileType xml exe ":silent %!xmllint --format --recover - 2>/dev/null"
+
+" End File

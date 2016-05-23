@@ -1,0 +1,45 @@
+#
+# ~/.bashrc
+#
+# by Alexiobash
+# https://alexiobash.com
+# me (at) alexiobash (dot) com
+#
+# ver: 1.0
+
+[[ $- != *i* ]] && return
+
+PS1='\[\e[32;1m\]\u\[\e[37;1m\]@\[\e[34;1m\]\h \[\e[0m\]\W \[\e[32;1m\]\$ \[\e[0m\]'
+#PS1='[\u@\h \W]\$ '
+PS2='> '
+PS3='> '
+PS4='+ '
+
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -latr'
+alias grep='grep --color'
+alias root='sudo su'
+alias diff='colordiff'
+alias iftop='sudo iftop'
+alias orphan='yaourt -R $(yaourt -Qdtq)'
+
+export PATH=$PATH:$(ruby -e 'print Gem.user_dir')/bin
+export EDITOR=vim
+export BROWSER="firefox '%s' &"
+export HISTSIZE=5000
+export HISTFILESIZE=10000
+export HISTTIMEFORMAT="%d.%m.%Y %H:%M:%S "
+
+if [ -f /etc/profile.d/proxy.sh ]; then
+	source /etc/profile.d/proxy.sh
+else
+	unset http_proxy
+	unset https_proxy
+	unset ftp_proxy
+fi
+
+complete -cf sudo
+complete -cf man
+
+# End File
